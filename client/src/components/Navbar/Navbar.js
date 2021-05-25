@@ -24,7 +24,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-
     const token = user?.token;
 
     if (token) {
@@ -32,10 +31,10 @@ const Navbar = () => {
 
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
-
+    
     setUser(JSON.parse(localStorage.getItem('profile')));
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[location]);
+    // eslint-disable-next-line
+  }, [location]);
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">

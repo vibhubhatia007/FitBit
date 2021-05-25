@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API = axios.create({ baseURL: 'http://localhost:5000' });
-// const url = 'https://fitbit-backend.herokuapp.com/posts';
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
@@ -18,4 +17,4 @@ export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updated
 export const deletePost = (id) => API.delete(`/posts/${id}`);
 
 export const signIn = (formData) => API.post('/user/signin', formData);
-export const signUp = (formData) => API.post('/user/signup', formData)
+export const signUp = (formData) => API.post('/user/signup', formData);
