@@ -3,7 +3,7 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
-
+import '../../index.css';
 import memoriesLogo from '../../images/memoriesLogo.png';
 import memoriesText from '../../images/memoriesText.png';
 import * as actionType from '../../constants/actionTypes';
@@ -44,6 +44,18 @@ const Navbar = () => {
         <img component={Link} to="/" src={memoriesText} alt="icon" height="45px" />
         <img className={classes.image} src={memoriesLogo} alt="icon" height="40px" />
       </Link>
+      <div className="Navbar-menu" >
+
+      <Button component={Link} to="/posts" style={{fontWeight: "bold",display: "inline-block"}} >
+       posts
+      </Button>
+      <Button component={Link} to="/recipes" style={{fontWeight: "bold",display: "inline-block"}} >
+       Recipes
+      </Button>
+      <Button component={Link} to="/diet" style={{fontWeight: "bold",display: "inline-block"}} >
+       Diet
+      </Button>
+      </div>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
