@@ -47,6 +47,10 @@ export default function Recipe({title,calories,image,url,cuisine,meal,dish,label
     setExpanded(!expanded);
   };
 
+  if(labels=="")
+  {
+    labels=labels+"None";
+  }
   calories= "Calories : " + calories ;
   cuisine= "Cuisine : "+cuisine ;
   meal = "Meal : "+meal;
@@ -92,12 +96,12 @@ export default function Recipe({title,calories,image,url,cuisine,meal,dish,label
        
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" color="secondary" size="medium" >
 
           <FavoriteIcon />
         </IconButton>
     
-            <Link href = {url} >Know More</Link>
+            <Link href = {url} >Full Recipe</Link>
          
 
        </CardActions>

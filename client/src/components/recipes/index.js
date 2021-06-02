@@ -20,7 +20,7 @@ const App = () =>{
   }, [query]);
 
   const getRecipes = async () => {
-  const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
+  const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=15`)
   const data = await response.json();
   setRecipes(data.hits);
   console.log(data.hits);
@@ -40,11 +40,11 @@ const App = () =>{
   return(
     <div className="App">
      <form onSubmit={getSearch} className="search-form">
-       <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+       <input className="search-bar" type="text" placeholder="Search for rececipes according to ingredients" value={search} onChange={updateSearch}/>
        <button  className="search-button" type="submit">search</button>
      </form>
      <div className="recipes">
-    {recipes.slice(0, 9).map(recipe =>(
+    {recipes.slice(0, 15).map(recipe =>(
      <Recipe
      key={recipe.recipe.label}
      title={recipe.recipe.label} 
