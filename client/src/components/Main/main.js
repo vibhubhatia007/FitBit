@@ -1,12 +1,13 @@
-import React from 'react';
-import header from '../../images/header.png';
 
-const main = () => {
- return(
-<div>
-<img  src={header} alt="header" width="100%" style={{margin: "0px",padding: "0px"}} />
-</div>
- );   
-}
+// import header from '../../images/header.png';
+import './main.css'
+// import image1 from '../../images/cover_image-1.jpg';
+import React  from 'react';
+import Album from './Features';
 
-export default main;
+export default function main() {
+    return (
+<Album></Album>
+
+    );
+  }

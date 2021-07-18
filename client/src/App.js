@@ -9,6 +9,7 @@ import Auth from './components/Auth/Auth';
 import main from './components/Main/main'
 import Recipes from './components/recipes/index';
 import diet from './components/diet/index';
+import Footer from './Footer/Footer';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/recipes"  exact component={Recipes} />
           <Route path="/diet" exact component={diet} />
         </Switch>
+        <Footer/>
       </Container>
     </BrowserRouter>
   );
