@@ -12,10 +12,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Link } from 'react-router-dom';
 import image1 from '../../images/cover_image-1.jpg'
 import './main.css'
-
-
+import image2 from '../../images/image2.jpg';
+import image3 from '../../images/image3.jpeg';
+import image4 from '../../images/image4.jpg';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -76,14 +78,18 @@ export default function Album() {
             <div className={classes.heroButtons} className="buttons">
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
+                <Link to="/posts" style={{textDecoration: "none"}}>
                   <Button variant="contained" color="primary">
                    Post Reciepes
                   </Button>
+                  </Link>
                 </Grid>
                 <Grid item>
+                <Link to="/recipes" style={{textDecoration: "none"}}>
                   <Button variant="outlined" color="primary">
                     Explore Recipes
                   </Button>
+                  </Link>
                 </Grid>
               </Grid>
             </div>
@@ -98,26 +104,25 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={image2}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                     Post your own Reciepes
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    <Typography variant="h6"color="textSecondary" paragraph>
+                      Showcase your cooking skils by some intresting and delicious new reciepes or posting some recipes that you found absolutely delicious.
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
+                  <CardActions className="buttoncentre">
+                  <Link to="/posts" style={{textDecoration: "none"}}>
+                  <Button variant="contained" color="primary" >
+                   Post Reciepes
+                  </Button>
+                  </Link>
                   </CardActions>
-                </Card>
+                 </Card>
                 </Grid>
 
                 <Grid item xs={12} sm={6} md={4}>
@@ -125,24 +130,23 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={image3}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Explore New Recipes
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    <Typography variant="h6"color="textSecondary" paragraph>
+                    Whether you need an appetizer or a dessert , we have menu inspiration that will satisfy your patrons with great taste and variety.
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
+                  <CardActions className="buttoncentre">
+                  <Link to="/recipes" style={{textDecoration: "none"}}>
+                  <Button variant="contained" color="primary" >
+                   Explore Reciepes
+                  </Button>
+                  </Link>
                   </CardActions>
                 </Card>
                 </Grid>
@@ -152,34 +156,30 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={image4}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Track tour Calorie Intake
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    <Typography variant="h6"color="textSecondary" paragraph>
+                      Keep your Diet in Check by tracking your calorie intake through regular intervals to maintain your maintainance calories. 
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
+                  <CardActions className="buttoncentre">
+                  <Link to="/diet" style={{textDecoration: "none"}}>
+                  <Button variant="contained" color="primary" >
+                   Monitor your Diet
+                  </Button>
+                  </Link>
                   </CardActions>
                 </Card>
-
-
               </Grid>
             {/* ))} */}
           </Grid>
         </Container>
       </main>
-     
     </React.Fragment>
   );
 }
